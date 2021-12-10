@@ -1,6 +1,15 @@
 <po-toolbar p-title="Sample WebSocket"></po-toolbar>
 <po-page-default p-title="Processamento">
   <div class="po-row">
+    <form [formGroup]="searchForm" (ngSubmit)="changeMessage()">
+      <div ><input type="text" placeholder="remetente" name="remetente" autocomplete="off" 
+        formControlName="remetente"/>
+        <input type="text" name="mensagem" autocomplete="off" placeholder="mensagem"
+          formControlName="mensagem"/>
+          <button type="submit" class="btn btn-modify">Enviar Mensagem</button>
+      </div>
+    </form>
+    
     <po-button p-label="Iniciar Processamento" (p-click)="start()"></po-button>
   </div>
   <div class="po-row po-mt-2">
