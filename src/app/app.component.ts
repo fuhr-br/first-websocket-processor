@@ -14,7 +14,7 @@ export class AppComponent {
   private webSocketConnector: WebSocketConnector;
 
   mensagem: Sala={
-    id:'1',
+    id:'4',
     numPlayers: '2'
   };
   constructor(private http: HttpClient, private formBuilder: FormBuilder) {
@@ -28,8 +28,15 @@ export class AppComponent {
   changeMessage(): void{
     this.mensagem.id = this.searchForm.value.id;
     this.mensagem.numPlayers = this.searchForm.value.numPlayers;
+
   }
+
   ngOnInit(): void {
+
+  }
+
+  connect(){
+    console.warn("Entrei na Connect")
     this.webSocketConnector = new WebSocketConnector(
       'https://poc-websocket.herokuapp.com/socket',
       '/statusProcessor'+this.mensagem.id,
