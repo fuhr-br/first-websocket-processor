@@ -13,32 +13,32 @@ export class AppComponent {
   items: any[] = [];
   private webSocketConnector: WebSocketConnector;
 
-  mensagem: Mensagem;
+  mensagem: Sala={
+    id:'1',
+    numPlayers: '2'
+  };
   constructor(private http: HttpClient, private formBuilder: FormBuilder) {
   }
 
   searchForm = this.formBuilder.group({
-    remetente:'',
-    mensagem: '',
+    id:'1',
+    numPlayers: '2',
   });
 
   changeMessage(): void{
-    this.mensagem.remetente = this.searchForm.value.remetente;
-    this.mensagem.mensagem = this.searchForm.value.mensagem;
+    this.mensagem.id = this.searchForm.value.id;
+    this.mensagem.numPlayers = this.searchForm.value.numPlayers;
   }
   ngOnInit(): void {
-
-    this.mensagem = {remetente:"Gabriel",mensagem:"Teste"};
-
     this.webSocketConnector = new WebSocketConnector(
-      'http://localhost:8080/socket',
-      '/statusProcessor',
+      'https://poc-websocket.herokuapp.com/socket',
+      '/statusProcessor'+this.mensagem.id,
       this.onMessage.bind(this)
     );
   }
 
   start() {
-    this.http.put<Mensagem>('http://localhost:8080/api', this.mensagem)
+    this.http.put<Sala>('https://poc-websocket.herokuapp.com//api', this.mensagem)
       .subscribe(response => console.log(response));
   }
 
@@ -49,7 +49,7 @@ export class AppComponent {
 
 }
 
-export interface Mensagem{
-  remetente: string,
-  mensagem: string
+export interface Sala{
+  id: string,
+  numPlayers: string
 }
