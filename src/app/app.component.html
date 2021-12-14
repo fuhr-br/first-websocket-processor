@@ -1,20 +1,25 @@
-<po-toolbar p-title="Sample WebSocket"></po-toolbar>
-<po-page-default p-title="Processamento">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<po-toolbar p-title="Corações da Lila"></po-toolbar>
+<po-page-default p-title="Exemplo">
   <div class="po-row">
     <form [formGroup]="searchForm" (ngSubmit)="changeMessage()">
-      <div ><input type="text" placeholder="remetente" name="remetente" autocomplete="off" 
+      <div ><input type="text" placeholder="remetente" name="remetente" autocomplete="off"
         formControlName="id"/>
+
         <input type="text" name="mensagem" autocomplete="off" placeholder="mensagem"
           formControlName="numPlayers"/>
-          <button type="submit" class="btn btn-modify" (on-click)="start()">Enviar Mensagem</button>
+          <br>
+          <button type="submit" class="btn btn-primary" (on-click)="start()">Carregar Sala</button>
       </div>
     </form>
 
-    <button type="submit" class="btn btn-modify" (click)="connect()" style="margin: 10px;">
-      Connect
+    <button type="submit" class="btn btn-success" (click)="connect()" style="margin: 10px;">
+      Conectar
     </button>
-    
-    <po-button p-label="Iniciar Processamento" (p-click)="start()"></po-button>
+
+    <po-button p-label="Enviar Mensagem" (p-click)="start()"></po-button>
   </div>
   <div class="po-row po-mt-2">
     <po-list-view [p-items]="items">
