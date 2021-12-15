@@ -18,14 +18,19 @@ export class SalaService {
     );
   }
 
-  start(mensagem: string) {
-    this.http.put<Sala>('https://poc-websocket.herokuapp.com//api', mensagem)
+  start(sala: Sala) {
+    this.http.put<Sala>('https://poc-websocket.herokuapp.com//api', sala)
       .subscribe(response => console.log(response));
   }
 
   onMessage(message: any): void {
     this.items.push(message.body);
   }
+
+  mostrarMensagem():any{
+    return this.items;
+  }
+
 
   constructor(private http:HttpClient) { }
 }

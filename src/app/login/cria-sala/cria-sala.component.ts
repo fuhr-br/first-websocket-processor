@@ -26,8 +26,9 @@ export class CriaSalaComponent {
   }
 
   iniciar(){
+    this.changeMessage();
     this.salaService.connect(this.id);
-    this.router.navigate(['criasala',this.usuario])
+    this.router.navigate(['criasala',this.usuario,this.id])
   }
 
   

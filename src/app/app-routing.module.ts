@@ -12,7 +12,7 @@ const routes: Routes = [
     component:CriaSalaComponent
   },
   {
-    path:"criasala/:usuario",
+    path:"criasala/:usuario/:id",
     component:EnviaMensagemComponent
   }
 ];

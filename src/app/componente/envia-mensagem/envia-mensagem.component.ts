@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Sala } from 'src/app/sala';
+import { SalaService } from 'src/app/sala.service';
 import { WebSocketConnector } from 'src/websocket/websocket-connector';
 
 @Component({
@@ -9,49 +12,45 @@ import { WebSocketConnector } from 'src/websocket/websocket-connector';
   styleUrls: ['./envia-mensagem.component.css']
 })
 export class EnviaMensagemComponent implements OnInit {
+  items:any[];
+  private sala: Sala;
+  
 
-  items: any[] = [];
-  private webSocketConnector: WebSocketConnector;
-
-  mensagem: Sala={
-    id:'4',
-    numPlayers: '2'
-  };
-  constructor(private http: HttpClient, private formBuilder: FormBuilder) {
+  
+  constructor(private http: HttpClient, private formBuilder: FormBuilder,
+     private route: ActivatedRoute, private salaService:SalaService) {
+    this.sala={
+      id:'0',
+      usuario: '',
+      mensagem:''
+    };
+  
   }
 
   searchForm = this.formBuilder.group({
-    id:'1',
-    numPlayers: '2',
+    mensagem:""
   });
 
   changeMessage(): void{
-    this.mensagem.id = this.searchForm.value.id;
-    this.mensagem.numPlayers = this.searchForm.value.numPlayers;
+    this.sala.mensagem= this.searchForm.value.mensagem;
+    
 
   }
 
   ngOnInit(): void {
-
+    const routeParams = this.route.snapshot.paramMap;
+    this.sala.usuario = String(routeParams.get('usuario'));
+    this.sala.id = String(routeParams.get('id'));
   }
 
-  connect(){
-    console.warn("Entrei na Connect")
-    this.webSocketConnector = new WebSocketConnector(
-      'https://poc-websocket.herokuapp.com/socket',
-      '/statusProcessor'+this.mensagem.id,
-      this.onMessage.bind(this)
-    );
-  }
 
   start() {
-    this.http.put<Sala>('https://poc-websocket.herokuapp.com//api', this.mensagem)
-      .subscribe(response => console.log(response));
+    this.changeMessage();
+    this.salaService.start(this.sala);
+    this.items = this.salaService.mostrarMensagem();
   }
 
-  onMessage(message: any): void {
-    this.items.push(message.body);
-  }
+  
 
 
 }
