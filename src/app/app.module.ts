@@ -6,10 +6,14 @@ import { PoModule } from '@portinari/portinari-ui';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CriaSalaComponent } from './login/cria-sala/cria-sala.component';
+import { EnviaMensagemComponent } from './componente/envia-mensagem/envia-mensagem.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CriaSalaComponent,
+    EnviaMensagemComponent
   ],
   imports: [
     BrowserModule,
