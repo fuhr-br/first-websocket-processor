@@ -1,25 +1,19 @@
 
 po-list-view {
     width: 100%;
-    height: 30%;
 }
 
-po-page {
-    background-color: #fff;
-    height: 84%;
-    width: 100%;
-}
+
 
 po-row{
     width: 100%;
-    
     margin-bottom: 0;
 
 }
 form{
     width: inherit;
     display: block;
-    
+    z-index: 100;
 
 }
 
