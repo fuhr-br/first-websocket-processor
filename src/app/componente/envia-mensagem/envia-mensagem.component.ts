@@ -14,9 +14,7 @@ import { WebSocketConnector } from 'src/websocket/websocket-connector';
 export class EnviaMensagemComponent implements OnInit {
   items:any[];
   private sala: Sala;
-  
-
-  
+    
   constructor(private http: HttpClient, private formBuilder: FormBuilder,
      private route: ActivatedRoute, private salaService:SalaService) {
     this.sala={
@@ -41,17 +39,13 @@ export class EnviaMensagemComponent implements OnInit {
     const routeParams = this.route.snapshot.paramMap;
     this.sala.usuario = String(routeParams.get('usuario'));
     this.sala.id = String(routeParams.get('id'));
+    this.items = this.salaService.mostrarMensagem();
   }
-
 
   start() {
     this.changeMessage();
     this.salaService.start(this.sala);
-    this.items = this.salaService.mostrarMensagem();
   }
-
-  
-
 
 }
 
