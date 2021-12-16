@@ -3,7 +3,7 @@ import * as Stomp from 'stompjs';
 
 export class WebSocketConnector {
 
-    private stompClient: any;
+    private stompClient: Stomp;
 
     constructor(private webSocketEndPoint: string, private topic: string, private onMessage: Function, private callbackError?: Function) {
         const errorCallback = callbackError || this.onError;

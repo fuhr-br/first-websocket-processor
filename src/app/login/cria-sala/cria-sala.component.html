@@ -1,0 +1,16 @@
+<div class="po-row" >
+    <form class="retangulocinza"[formGroup]="searchForm" (ngSubmit)="changeMessage()">
+      <div >
+        <h3>Corações de Lila Chat</h3>
+        <input type="text" placeholder="Usuario" name="usuario" autocomplete="off"
+        formControlName="usuario"/>
+
+        <input type="text" name="id" autocomplete="off" placeholder="ID"
+          formControlName="id"/>
+          <br>
+          <button type="submit" class="btn btn-primary" (click)="iniciar()">Conectar</button>
+      </div>
+    </form>
+
+    
+  </div>
