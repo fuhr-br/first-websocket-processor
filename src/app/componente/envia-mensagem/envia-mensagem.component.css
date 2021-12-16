@@ -1,3 +1,45 @@
+
 po-list-view {
     width: 100%;
+}
+
+
+
+po-row{
+    width: 100%;
+    position: static;
+    margin-bottom: 0;
+
+}
+form{
+    width: inherit;
+    display: block;
+    
+
+}
+
+form input{
+    height: 40px;
+    align-items: center;
+    margin: 5px;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+div .box-msg{
+    width: 90%;
+}
+div button{
+    
+    color: white;
+    background-color: rgb(91, 6, 102);
+    border-radius: 8px;
+    padding: 10px;
+    margin:5px;
+    
+}
+div button:hover{
+    color:rgb(91, 6, 102);
+    border:rgb(91, 6, 102) 2px solid;
+    background-color:  white;
 }

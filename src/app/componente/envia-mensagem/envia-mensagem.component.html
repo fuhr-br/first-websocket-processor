@@ -2,21 +2,7 @@
 
 <po-toolbar p-title="Corações da Lila"></po-toolbar>
 <po-page-default p-title="Exemplo">
-  <div class="po-row">
-    <form [formGroup]="searchForm" (ngSubmit)="changeMessage()">
-      <div >
-
-        <input type="text" name="mensagem" autocomplete="off" placeholder="mensagem"
-          formControlName="mensagem"/>
-          <br>
-          <button type="submit" class="btn btn-primary" (click)="start()">Enviar mensagem</button>
-      </div>
-    </form>
-
     
-  </div>
- 
-  
   <div class="po-row po-mt-2">
     <po-list-view [p-items]="items">
       <ng-template p-list-view-content-template let-item>
@@ -31,4 +17,18 @@
     </po-list-view>
   </div>
 </po-page-default>
+
+<div class="po-row">
+  <form [formGroup]="searchForm" (ngSubmit)="changeMessage()">
+    
+
+      <input class="box-msg"type="text" name="mensagem" autocomplete="off" placeholder="mensagem"
+        formControlName="mensagem"/>
+        
+        <button type="submit" class="btn btn-primary" (click)="start()">Enviar</button>
+    
+  </form>
+
+  
+</div>
 
