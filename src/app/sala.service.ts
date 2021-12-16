@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { WebSocketConnector } from 'src/websocket/websocket-connector';
 import { Sala } from './sala';
 
@@ -31,6 +32,11 @@ export class SalaService {
     return this.items;
   }
 
+  disconnect(){
+    this.webSocketConnector.disconnect();
+    this.items = [];
+    this.router.navigate([""]);
+  }
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private router:Router) { }
 }

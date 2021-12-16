@@ -28,4 +28,10 @@ export class WebSocketConnector {
             this.connect(this.onError);
         }, 3000);
     }
+
+    disconnect(){
+        if(this.stompClient != null){
+            this.stompClient.disconnect();
+        }
+    }
 }

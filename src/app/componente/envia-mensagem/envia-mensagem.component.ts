@@ -47,6 +47,10 @@ export class EnviaMensagemComponent implements OnInit {
     this.salaService.start(this.sala);
   }
 
+  disconnect(){
+    this.salaService.disconnect();
+  }
+
 }
 
 
