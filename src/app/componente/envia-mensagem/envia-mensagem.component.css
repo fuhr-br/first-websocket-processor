@@ -4,6 +4,20 @@ po-list-view {
 }
 
 
+#btn-enviar{
+    width: 100px; 
+    height: 45px;
+    position: absolute;
+    margin-left: 20px;
+    left: 90%;
+    top: 93%;
+}
+#btn-desconectar{
+   margin-left: 90%;
+   position: absolute;
+   top:2%;
+   left: 1%;
+}
 
 po-row{
     width: 100%;
@@ -26,7 +40,10 @@ form input{
 }
 
 div .box-msg{
-    width: 90%;
+    margin: 10px; 
+    width: 98%; 
+    height: 80px;
+    resize: none;
 }
 div button{
     
