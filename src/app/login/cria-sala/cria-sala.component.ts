@@ -12,11 +12,10 @@ import { WebSocketConnector } from 'src/websocket/websocket-connector';
 export class CriaSalaComponent {
   private id: string;
   private usuario: string;
-  private webSocketConnector: WebSocketConnector;
   
   searchForm = this.formBuilder.group({
-    id:'1',
-    usuario: 'user',
+    id:'',
+    usuario: '',
   });
 
   changeMessage(): void{
@@ -30,10 +29,7 @@ export class CriaSalaComponent {
     this.salaService.connect(this.id);
     this.router.navigate(['criasala',this.usuario,this.id])
   }
-
   
   constructor(private formBuilder: FormBuilder, private router: Router, private salaService: SalaService) { }
-
-  
 
 }

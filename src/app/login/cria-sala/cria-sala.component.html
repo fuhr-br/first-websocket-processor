@@ -2,9 +2,11 @@
     <form class="retangulocinza"[formGroup]="searchForm" (ngSubmit)="changeMessage()">
       <div >
         <h3>Corações de Lila Chat</h3>
+        <label for="usuario">Nome de Usuário</label>
         <input type="text" placeholder="Usuario" name="usuario" autocomplete="off"
         formControlName="usuario"/>
-
+        <br>
+        <label for="id">Id da Sala</label>
         <input type="text" name="id" autocomplete="off" placeholder="ID"
           formControlName="id"/>
           <br>
