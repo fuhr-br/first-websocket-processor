@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SalaService } from 'src/app/sala.service';
-import { WebSocketConnector } from 'src/websocket/websocket-connector';
 
 @Component({
   selector: 'app-cria-sala',
