@@ -2,9 +2,16 @@
 
 .po-page {
     background-color: #fff;
-    height: 83%;
+    height: 75%;
     width: 100%;
 }
 .po-page-content{
     height: 90% !important;
+}
+.po-info-value{
+    word-break: break-word !important;
+}
+.po-toolbar{
+display: inline-block;
+width: auto;
 }

@@ -1,7 +1,10 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <po-toolbar p-title="Corações da Lila"></po-toolbar>
-<po-page-default p-title="Exemplo">
+<button id="btn-desconectar" (click)='disconnect()'>Desconectar</button>
+
+
+<po-page-default >
     
   <div class="po-row po-mt-2">
     <po-list-view [p-items]="items">
@@ -22,14 +25,14 @@
   <form [formGroup]="searchForm" (ngSubmit)="changeMessage()">
     
 
-      <input class="box-msg"type="text" name="mensagem" autocomplete="off" placeholder="mensagem"
-        formControlName="mensagem"/>
+      <textarea class="box-msg"type="text" name="mensagem" rows="4" cols="80" autocomplete="off" placeholder="mensagem"
+        formControlName="mensagem"  > </textarea>
         
-        <button type="submit" class="btn btn-primary" (click)="start()">Enviar</button>
+        <button id="btn-enviar" stype="submit" class="btn btn-primary" (click)="start()">Enviar</button>
     
   </form>
 
-    <button (click)='disconnect()'>Desconectar</button>
+   
 
   
 </div>

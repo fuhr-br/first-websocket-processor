@@ -4,6 +4,17 @@ po-list-view {
 }
 
 
+#btn-enviar{
+    display: inline-block;
+  width: 100px;
+  margin-left: 88%;
+
+}
+#btn-desconectar{
+    display: inline-block;
+  width: auto;
+  margin-left: 80%;
+}
 
 po-row{
     width: 100%;
@@ -26,9 +37,13 @@ form input{
 }
 
 div .box-msg{
-    width: 90%;
+    margin: 10px; 
+    width: 98%; 
+    height: 80px;
+    resize: none;
+    border-style: dotted 6px red;
 }
-div button{
+ button{
     
     color: white;
     background-color: rgb(91, 6, 102);
@@ -37,7 +52,7 @@ div button{
     margin:5px;
     
 }
-div button:hover{
+button:hover{
     color:rgb(91, 6, 102);
     border:rgb(91, 6, 102) 2px solid;
     background-color:  white;
